@@ -2,6 +2,7 @@ import {
   LineChart,
   Line,
   XAxis,
+  YAxis,  
   Tooltip,
   ResponsiveContainer
 } from "recharts";
@@ -19,10 +20,8 @@ function Chart() {
   return (
     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
       
-      {/* TITLE */}
       <h2 className="text-lg font-semibold mb-4">BTC Prices</h2>
 
-      {/* GRAPH */}
       <div className="w-full h-78">
         <ResponsiveContainer>
           <LineChart data={data}>
@@ -34,6 +33,12 @@ function Chart() {
               className="text-xs"
             />
 
+            <YAxis
+              axisLine={false}
+              tickLine={false}
+              className="text-xs"
+              tickFormatter={(value) => `$${value.toLocaleString()}`}
+            />
             <Tooltip />
 
             <Line 
@@ -43,7 +48,6 @@ function Chart() {
               strokeWidth={3}
               dot={false}
             />
-
           </LineChart>
         </ResponsiveContainer>
       </div>
