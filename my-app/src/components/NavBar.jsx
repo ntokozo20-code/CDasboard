@@ -28,4 +28,4 @@ function Navbar({ onMenuClick }) {
   );
 }
 
-export default Header;
+export default Navbar;
